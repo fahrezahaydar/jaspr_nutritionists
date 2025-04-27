@@ -1,18 +1,18 @@
-class Story {
+class StoryData {
   final String title;
   final String text;
   final String date;
   final String image;
 
-  Story({
+  StoryData({
     required this.title,
     required this.text,
     required this.date,
     required this.image,
   });
 
-  factory Story.fromMap(Map<String, dynamic> map) {
-    return Story(
+  factory StoryData.fromMap(Map<String, dynamic> map) {
+    return StoryData(
       title: map['title'] ?? '',
       text: map['text'] ?? '',
       date: map['date'] ?? '',

@@ -1,4 +1,17 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_riverpod/jaspr_riverpod.dart';
+
+import '../components/common_card.dart';
+import '../components/cta.dart';
+import '../components/navigation_panel.dart';
+import '../components/section_title.dart';
+import '../constants/styles.dart';
+import '../data/about_raw.dart';
+import '../layout/page.dart';
+import '../model/export.dart';
+
+part 'widgets/story.dart';
+part 'widgets/story_card.dart';
 
 // By using the @client annotation this component will be automatically compiled to javascript and mounted
 // on the client. Therefore:
@@ -8,36 +21,41 @@ import 'package:jaspr/jaspr.dart';
 @client
 class About extends StatelessComponent {
   const About({super.key});
-
+  static AboutDetails hero = AboutDetails.fromMap(aboutHero);
+  static Header story = Header.fromMap(storyHeader);
+  static Header achievement = Header.fromMap(achievementHeader);
+  static Header about = Header.fromMap(cta);
+  static List<Content> achievementContent = Content.fromMap(achievementData);
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield section([
-      ol([
-        li([
-          h3([text('📖 Documentation')]),
-          text('Jaspr\'s '),
-          a(href: 'https://docs.jaspr.site', [text('official documentation')]),
-          text(' provides you with all information you need to get started.'),
-        ]),
-        li([
-          h3([text('💬 Community')]),
-          text('Got stuck? Ask your question on the official '),
-          a(href: 'https://discord.gg/XGXrGEk4c6', [text('Discord server')]),
-          text(' for the Jaspr community.'),
-        ]),
-        li([
-          h3([text('📦 Ecosystem')]),
-          text('Get official packages and integrations for your project like jaspr_router, jaspr_tailwind or jaspr_riverpod. Find packages built for Jaspr on pub.dev using the '),
-          a(href: 'https://pub.dev/packages?q=topic%3Ajaspr', [text('#jaspr')]),
-          text(' topic, or publish your own.'),
-        ]),
-        li([
-          h3([text('💙 Support Jaspr')]),
-          text('If you like Jaspr, consider starring us on '),
-          a(href: 'https://github.com/schultek/jaspr', [text('Github')]),
-          text(' and tell your friends.'),
+    yield Page(classes: "${St.py_50} ${St.page}", [
+      section(classes: "self-stretch", [
+        img(classes: "w-full ", src: "images/hero/about.png"),
+      ]),
+      section([
+        div(classes: "flex flex-col p-30 t-xl:p-80 d:p-100 items-center g-20 t-xl:g-40 d:g-50 rounded-[10px] d:rounded-xl border border-green-85 bg-green-95", [
+          h2(
+            classes: "self-stretch",
+            [text(hero.title)],
+          ),
+          p(
+            classes: "self-stretch text-gray-20 flex flex-col",
+            [for (var t in hero.paragraph) text(t)],
+          )
         ]),
       ]),
+      section([
+        SectionTitle(achievement),
+        div(
+          classes: "grid grid-cols-1 gap-20 l:gap-30 l:grid-cols-2",
+          achievementContent.map((data) => CommonCard(data)).toList(),
+        ),
+      ]),
+      section([
+        SectionTitle(story),
+        const Story(),
+      ]),
+      CTA(about, buttonText: "Book a Demo")
     ]);
   }
 }

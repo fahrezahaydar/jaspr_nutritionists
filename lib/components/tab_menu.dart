@@ -21,6 +21,7 @@ class TabMenu extends StatelessComponent {
           button(
             classes: "flex px-12 py-18 cursor-pointer hover:bg-dark-green-25 items-center rounded-md  border-dark-green-30 text-white ${i == index ? "border bg-dark-green-25" : ""} $classes}",
             onClick: () {
+              print(index);
               context.read(provider.notifier).state = i;
             },
             [text(data[i])],

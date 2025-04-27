@@ -6,12 +6,14 @@ class Button extends StatelessComponent {
     this.style,
     this.onClick,
     this.classes,
+    this.type,
   });
 
   final List<Component> children;
   final Styles? style;
   final void Function()? onClick;
   final String? classes;
+  final ButtonType? type;
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
@@ -19,6 +21,7 @@ class Button extends StatelessComponent {
       classes: "btn-primary $classes",
       styles: style,
       onClick: onClick,
+      type: type,
       children,
     );
   }

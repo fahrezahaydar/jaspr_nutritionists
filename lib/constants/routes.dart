@@ -4,7 +4,7 @@ class Routes {
     (label: 'About', path: '/about'),
     (label: 'Team', path: '/team'),
     (label: 'Process', path: '/process'),
-    (label: 'Pricing', path: '/about'),
+    (label: 'Pricing', path: '/pricing'),
     (label: 'Blog', path: '/blog'),
   ];
   static var last = (label: 'Contact Us', path: '/contact-us');
@@ -13,7 +13,7 @@ class Routes {
     (label: 'About', path: '/about'),
     (label: 'Team', path: '/team'),
     (label: 'Process', path: '/process'),
-    (label: 'Pricing', path: '/about'),
+    (label: 'Pricing', path: '/pricing'),
     (label: 'Blog', path: '/blog'),
     (label: 'Contact Us', path: '/contact-us'),
   ];

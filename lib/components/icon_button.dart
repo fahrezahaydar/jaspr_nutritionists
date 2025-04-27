@@ -30,3 +30,16 @@ class IconButtonState extends State<IconButton> {
     );
   }
 }
+
+class MediaButton extends StatelessComponent {
+  final String? classes;
+
+  MediaButton({super.key, this.classes});
+  @override
+  Iterable<Component> build(BuildContext context) sync* {
+    yield i(
+      classes: 'p-14 d:p-18 rounded-md d:rounded-xl text-gray-15 bg-green-70 $classes',
+      [],
+    );
+  }
+}

@@ -1,9 +1,13 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
-import 'layout/header.dart';
 import 'pages/about.dart';
+import 'pages/blog.dart';
+import 'pages/contact.dart';
 import 'pages/home.dart';
+import 'pages/pricing.dart';
+import 'pages/process.dart';
+import 'pages/team.dart';
 
 // The main component of your application.
 //
@@ -40,11 +44,43 @@ class AppState extends State<App> {
     // create and return a [List] here.
 
     // Renders a <div class="main"> html element with children.
-    yield div(classes: 'main', [
-      const Header(),
+    yield main_([
       Router(routes: [
-        Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
-        Route(path: '/about', title: 'About', builder: (context, state) => const About()),
+        Route(
+          path: '/',
+          title: 'Home',
+          builder: (context, state) => const Home(),
+        ),
+        Route(
+          path: '/about',
+          title: 'About',
+          builder: (context, state) => const About(),
+        ),
+        Route(
+          path: '/team',
+          title: 'Teams',
+          builder: (context, state) => const Team(),
+        ),
+        Route(
+          path: '/process',
+          title: 'Process',
+          builder: (context, state) => const Process(),
+        ),
+        Route(
+          path: '/pricing',
+          title: 'Pricing',
+          builder: (context, state) => const Pricing(),
+        ),
+        Route(
+          path: '/blog',
+          title: 'Blog',
+          builder: (context, state) => const Blog(),
+        ),
+        Route(
+          path: '/contact-us',
+          title: 'Contact Us',
+          builder: (context, state) => const ContactUs(),
+        ),
       ]),
     ]);
   }

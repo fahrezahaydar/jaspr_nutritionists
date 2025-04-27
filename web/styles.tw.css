@@ -3,63 +3,75 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Urbanist", sans-serif;
-  --font-icon: "Material Icons";
+    --font-sans: "Urbanist", sans-serif;
+    --font-icon: "Material Icons";
 
-  --breakpoint-xxs: 321px;
-  --breakpoint-xs: 376px;
-  --breakpoint-sm: 426px;
-  --breakpoint-md: 769px;
-  --breakpoint-lg: 1025px;
-  --breakpoint-xl: 1201px;
-  --breakpoint-2xl: 1441px;
-  --breakpoint-3xl: 1921px;
-  --breakpoint-4xl: 2561px;
-  --breakpoint-m-xs: 320px;
-  --breakpoint-m-sm: 375px;
-  --breakpoint-m: 480px;
-  --breakpoint-m-xl: 600px;
-  --breakpoint-t: 768px;
-  --breakpoint-t-xl: 1024px;
-  --breakpoint-l:1280px;
-  --breakpoint-l-xl:1440px;
-  --breakpoint-d:1920px;
-  --breakpoint-d-xl:2560px;
-  
-  
+    --breakpoint-*: initial;
+    --breakpoint-m-xs: 320px;
+    --breakpoint-m-sm: 375px;
+    --breakpoint-m: 480px;
+    --breakpoint-m-xl: 600px;
+    --breakpoint-t: 768px;
+    --breakpoint-t-xl: 1024px;
+    --breakpoint-l: 1280px;
+    --breakpoint-l-xl: 1440px;
+    --breakpoint-d: 1920px;
+    --breakpoint-d-xl: 2560px;
 
+    --color-dark-green-15: #1a3129;
+    --color-dark-green-20: #234338;
+    --color-dark-green-25: #2c5446;
+    --color-dark-green-30: #356554;
+    --color-dark-green-40: #468671;
+    --color-dark-green-60: #79b9a4;
+    --color-dark-green-80: #bcdcd1;
+    --color-dark-green-90: #ddede8;
 
+    --color-green-70: #cbea7b;
+    --color-green-75: #d3ee91;
+    --color-green-80: #dcf1a7;
+    --color-green-85: #e5f5bd;
+    --color-green-90: #eef8d3;
+    --color-green-95: #f6fbe9;
+    --color-green-97: #fafdf2;
+    --color-green-99: #fdfefb;
 
-  --color-dark-green-15: #1a3129;
-  --color-dark-green-20: #234338;
-  --color-dark-green-25: #2c5446;
-  --color-dark-green-30: #356554;
-  --color-dark-green-40: #468671;
-  --color-dark-green-60: #79b9a4;
-  --color-dark-green-80: #bcdcd1;
-  --color-dark-green-90: #ddede8;
+    --color-gray-10: #1a1a1a;
+    --color-gray-15: #262626;
+    --color-gray-20: #333333;
+    --color-gray-30: #4c4c4d;
+    --color-gray-35: #59595a;
+    --color-gray-40: #656567;
+    --color-gray-50: #808081;
+    --color-gray-60: #98989a;
+    --color-gray-90: #e6e6e6;
+    --color-gray-95: #f2f2f2;
+    --color-gray-97: #f7f7f7;
+    --color-gray-99: #fcfcfc;
 
-  --color-green-70: #cbea7b;
-  --color-green-75: #d3ee91;
-  --color-green-80: #dcf1a7;
-  --color-green-85: #e5f5bd;
-  --color-green-90: #eef8d3;
-  --color-green-95: #f6fbe9;
-  --color-green-97: #fafdf2;
-  --color-green-99: #fdfefb;
+    --spacing: 1px;
+}
 
-  --color-gray-10: #1a1a1a;
-  --color-gray-15: #262626;
-  --color-gray-20: #333333;
-  --color-gray-30: #4c4c4d;
-  --color-gray-35: #59595a;
-  --color-gray-40: #656567;
-  --color-gray-50: #808081;
-  --color-gray-60: #98989a;
-  --color-gray-90: #e6e6e6;
-  --color-gray-95: #f2f2f2;
-  --color-gray-97: #f7f7f7;
-  --color-gray-99: #fcfcfc;
+@utility px-plus4-* {
+    padding-inline: calc(var(--spacing) * --value(integer));
 
-  --spacing: 1px;
+    @media (min-width: 1280px) {
+        padding-inline: calc(var(--spacing) * --value(integer) +4);
+    }
+
+    @media (min-width: 1920px) {
+        padding-inline: calc(var(--spacing) * --value(integer) +8);
+    }
+}
+
+@utility py-plus4-* {
+    padding-block: calc(var(--spacing) * --value(integer));
+
+    @media (min-width: 1280px) {
+        padding-block: calc(var(--spacing) * --value(integer) +4);
+    }
+
+    @media (min-width: 1920px) {
+        padding-block: calc(var(--spacing) * --value(integer) +8);
+    }
 }
