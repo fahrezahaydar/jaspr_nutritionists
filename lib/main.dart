@@ -40,9 +40,6 @@ void main() {
       link(rel: "stylesheet", href: "https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"),
       link(rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"),
       link(href: 'styles.css', rel: 'stylesheet'),
-      link(href: 'css/component.css', rel: 'stylesheet'),
-      link(href: 'css/widget.css', rel: 'stylesheet'),
-      link(href: 'css/typography.css', rel: 'stylesheet'),
     ],
     body: App(),
   ));

@@ -24,14 +24,14 @@ class Banner extends StatelessComponent {
           src: 'images/abstract-right.svg',
         ),
         img(
-          classes: 'h-[20px] t:h-[20px]',
+          classes: 'h-[20px] l:h-[24px]',
           src: 'images/cricket-ball.svg',
         ),
         p(
           classes: 'text-white',
           [text('Join Our Personalized Nutrition Demo For Free')],
         ),
-        div(classes: 'font-icon text-white text-[20px] t:text-[20px]', [
+        div(classes: 'font-icon text-white text-[20px] l:text-[24px]', [
           text('arrow_forward'),
         ]),
       ]),

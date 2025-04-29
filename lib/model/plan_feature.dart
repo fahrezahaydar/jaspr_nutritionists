@@ -19,4 +19,8 @@ class PlanFeature {
       ultimatePlan: map['Ultimate Plan'] ?? false,
     );
   }
+
+  static toListObject(PlanFeature plan) {
+    return [plan.feature, plan.basicPlan, plan.premiumPlan, plan.ultimatePlan];
+  }
 }

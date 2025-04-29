@@ -7,7 +7,7 @@ class PricingCard extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
-      classes: 'flex flex-col p-30 l:p-40 d:p-50 items-start gap-24 l:gap-30 d:gap-40 justify-between self-stretch rounded-[10px] d:rounded-xl border border-green-90 bg-green-95',
+      classes: 'flex flex-col p-30 l:p-40 d:p-50 items-start gap-24 l:gap-30 d:gap-40 ${isDetails ? "self-start" : "justify-between self-stretch"}  rounded-[10px] d:rounded-xl border border-green-90 bg-green-95',
       [
         div(
           classes: "flex flex-col items-start self-stretch",
@@ -27,17 +27,15 @@ class PricingCard extends StatelessComponent {
             div(
               classes: "flex flex-col self-stretch rounded-md l:rounded-lg border border-green-85 bg-green-90 *:not-last:border-b-green-80",
               data.features.map((feature) {
-                return div([
-                  div(
-                    classes: "flex self-stretch px-18 py-14 l:px-20 l:py-16 d:px-24 d:py-20",
-                    [text(feature)],
-                  ),
-                ]);
+                return div(
+                  classes: "flex self-stretch not-last:border-b border-green-80 px-18 py-14 l:px-20 l:py-16 d:px-24 d:py-20",
+                  [text(feature)],
+                );
               }).toList(),
             ),
             if (data.special != null)
               div(
-                classes: "flex rounded-md l:rounded-lg self-stretch px-18 py-14 l:px-20 l:py-16 d:px-24 d:py-20 bg-dark-green-20 *:text-white",
+                classes: "flex *:text-start rounded-md l:rounded-lg self-stretch px-18 py-14 l:px-20 l:py-16 d:px-24 d:py-20 bg-dark-green-20 *:text-white",
                 [
                   p([text(data.special!)])
                 ],

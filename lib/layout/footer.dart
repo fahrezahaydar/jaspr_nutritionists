@@ -20,18 +20,23 @@ class Footer extends StatelessComponent {
         NavigationBar(routes: Routes.all, type: NavBarType.footer),
         _buildScrollToTop(classes: "max-t-xl:hidden"),
       ]),
-      div(classes: 'footer-container', [
-        div(classes: 'contact-section', [
+      //     padding: 20px;
+      //     flex-direction: column;
+      //     gap: 20px;
+
+      // }
+
+      div(classes: 'flex border max-l:flex-col gap-20 p-20 items-start self-stretch border-dark-green-25 bg-dark-green-20 rounded-lg justify-between', [
+        div(classes: 'flex items-start self-stretch gap-16 t:gap-20 max-t:flex-col', [
           const ContactButton(isFooter: true),
         ]),
-        p(classes: "text-gray-95 text-[14px] l:text-[16px] font-normal leading-[150%]", [
+        p(classes: "text-gray-95 font-normal leading-normal self-center", [
           text('© 2023 Nutritionist. All rights reserved.'),
         ]),
       ]),
     ]);
   }
 
-  // Extract the scroll-to-top component logic
   Component _buildScrollToTop({String? classes}) {
     return div(
       classes: 'flex items-center gap-6 t-xl:gap-20 $classes ',

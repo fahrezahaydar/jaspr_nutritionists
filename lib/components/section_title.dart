@@ -11,7 +11,7 @@ class SectionTitle extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: 'title', [
+    yield div(classes: 'col-center gap-4-6', [
       h2([text(header.title)]),
       p(
         classes: 'text-gray-15',

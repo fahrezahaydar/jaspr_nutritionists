@@ -52,26 +52,117 @@
     --spacing: 1px;
 }
 
-@utility px-plus4-* {
-    padding-inline: calc(var(--spacing) * --value(integer));
-
-    @media (min-width: 1280px) {
-        padding-inline: calc(var(--spacing) * --value(integer) +4);
+@layer components {
+    .col-center {
+        @apply flex flex-col items-center self-stretch;
     }
 
-    @media (min-width: 1920px) {
-        padding-inline: calc(var(--spacing) * --value(integer) +8);
+    .page {
+        @apply justify-center gap-50 l:gap-80 d:gap-100;
+    }
+
+    .top-banner {
+        @apply flex flex-col items-start self-stretch justify-center relative overflow-hidden;
+        @apply border border-b-dark-green-20 bg-dark-green-15;
+        @apply pb-14 pt-40 px-16 t-xl:px-80 d:px-162;
+    }
+    .banner-container {
+        @apply flex relative py-10 px-20 border border-dark-green-25 rounded-md overflow-hidden justify-center items-center gap-8 self-stretch bg-dark-green-20;
+    }
+
+    .btn-primary {
+        @apply border-none rounded-lg text-gray-15 text-lg font-semibold leading-normal bg-green-70;
+        @apply px-24 py-14;
+    }
+
+    .sidenav {
+        @apply flex l:hidden flex-col justify-start items-center rounded-b-[20px] bg-dark-green-15;
+        @apply fixed top-0 right-0 z-3;
+        @apply p-16 w-7/10 gap-30 h-full m-xl:w-1/2 m-xl:p-32 m-xl:gap-60;
+    }
+
+    .nav-bg {
+        @apply fixed top-0 left-0 z-2 w-full h-full bg-black opacity-30 backdrop-blur-xs;
+    }
+
+    #sidebar {
+        @apply hidden;
+    }
+
+    #sidebar.active {
+        @apply block;
     }
 }
 
-@utility py-plus4-* {
-    padding-block: calc(var(--spacing) * --value(integer));
-
-    @media (min-width: 1280px) {
-        padding-block: calc(var(--spacing) * --value(integer) +4);
+@layer base {
+    h1 {
+        @apply m-0 text-dark-green-15 text-[38px] l:text-[48px] d:text-[58px] text-center font-sans font-black leading-none;
+    }
+    h2 {
+        @apply m-0 text-gray-15 text-[28px] l:text-[38px] d:text-[48px] text-center font-sans font-bold leading-normal;
+    }
+    h3 {
+        @apply m-0 text-gray-15 text-[22px] l:text-[24px] d:text-[30px] text-center font-sans font-semibold leading-normal;
+    }
+    h4 {
+        @apply m-0 text-gray-15 text-[20px] l:text-[22px] d:text-[26px] text-center font-sans font-semibold leading-normal;
+    }
+    h5 {
+        @apply m-0 text-gray-15 text-[18px] l:text-[20px] d:text-[24px] text-center font-sans font-semibold leading-normal;
+    }
+    h6 {
+        @apply m-0 text-gray-15 text-[16px] l:text-[18px] d:text-[20px] text-center font-sans font-semibold leading-normal;
+    }
+    p {
+        @apply m-0 text-gray-15 text-[14px] l:text-[16px] d:text-[18px] text-center font-sans font-medium leading-normal;
     }
 
-    @media (min-width: 1920px) {
-        padding-block: calc(var(--spacing) * --value(integer) +8);
+    header {
+        @apply flex relative overflow-hidden justify-between items-center self-stretch border border-b-dark-green-20 bg-dark-green-15;
+        @apply d:px-162 l:px-80 l:py-14 px-16 pt-40 pb-14;
     }
+
+    footer {
+        @apply flex border border-t-gray-15 flex-col items-start bg-dark-green-15;
+        @apply gap-30 t-xl:gap-40 d:gap-50;
+        @apply px-16 py-30 t-xl:px-80 t-xl:py-40 d:px-162 d:py-80;
+    }
+
+    section {
+        @apply flex flex-col self-stretch;
+        @apply gap-50 t-xl:gap-60 d:gap-80;
+        @apply px-16 t-xl:px-80 d:px-162;
+    }
+}
+
+@utility px-4-* {
+    @apply px-[--value(integer) * var(--spacing)];
+    @apply l:px-[calc((--value(integer)+4) * var(--spacing))];
+    @apply d:px-[calc((--value(integer)+8) * var(--spacing))];}
+
+@utility py-4-* {
+    @apply py-[--value(integer) * var(--spacing)];
+    @apply l:py-[calc((--value(integer)+4) * var(--spacing))];
+    @apply d:py-[calc((--value(integer)+8) * var(--spacing))];}
+
+@utility py-10-* {
+    @apply py-[--value(integer) * var(--spacing)];
+    @apply l:py-[calc((--value(integer)+10) * var(--spacing))];
+    @apply d:py-[calc((--value(integer)+20) * var(--spacing))];}
+
+@utility pt-10-* {
+    @apply pt-[--value(integer) * var(--spacing)];
+    @apply l:pt-[calc((--value(integer)+10) * var(--spacing))];
+    @apply d:pt-[calc((--value(integer)+20) * var(--spacing))];}}
+
+@utility gap-4-* {
+    @apply gap-[--value(integer) * var(--spacing)];
+    @apply l:gap-[calc((--value(integer)+4) * var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+8) * var(--spacing))];
+}
+
+@utility gap-10-* {
+    @apply gap-[--value(integer) * var(--spacing)];
+    @apply l:gap-[calc((--value(integer)+10) * var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+20) * var(--spacing))];
 }

@@ -6,13 +6,15 @@ class HomeHero extends StatelessComponent {
     "https://randomuser.me/api/portraits/thumb/women/2.jpg",
     "https://randomuser.me/api/portraits/thumb/women/3.jpg",
   ];
+  static var ts = AppTypography.ts;
+
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
-      classes: 'flex max-l:-space-y-28 d:pr-[162px] items-center d:gap-[50px] self-stretch l:pr-[66px] l:gap-[40px] max-l:flex-col',
+      classes: 'col-center l:flex-row l:min-h-560 max-l:-space-y-28 d:pr-162 d:gap-50 l:pr-66 l:gap-40 ',
       [
         img(
-          classes: 'flex bg-green-70 bg-[url(/images/grid.png)] object-cover w-full l:w-[54%] rounded-b-[30px] l:rounded-br-[40px] d:rounded-br-[50px]',
+          classes: 'flex bg-green-70 bg-[url(/images/grid.png)] l:min-w-640 object-cover w-full l:w-1/2 rounded-b-[30px] l:rounded-br-[40px] d:rounded-br-[50px]',
           loading: MediaLoading.lazy,
           src: 'images/hero/home.png',
         ),
@@ -20,7 +22,7 @@ class HomeHero extends StatelessComponent {
           classes: 'flex flex-col max-l:px-16 gap-30 l:gap-50 self-center',
           [
             div(
-              classes: 'flex flex-col items-center l:items-start gap-10 xl:gap-20 max-l:order-2 *:l:text-start',
+              classes: 'col-center l:items-start gap-10-10 max-l:order-2 *:l:text-start',
               [
                 h4(
                   classes: 'border-b-4 border-green-70 text-dark-green-15 text-[18px] l:text-[28px] ',

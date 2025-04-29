@@ -8,7 +8,8 @@ import '../components/common_card.dart';
 import '../components/list_tile.dart';
 import '../components/navigation_panel.dart';
 import '../components/section_title.dart';
-import '../constants/styles.dart';
+import '../constants/inset.dart';
+import '../constants/text_theme.dart';
 import '../data/home_data.dart';
 import '../layout/page.dart';
 import '../model/export.dart';
@@ -31,28 +32,30 @@ class Home extends StatelessComponent {
   static Header pricing = Header.fromMap(pricingHeader);
   static List<Content> featureContent = Content.fromMap(featuresData);
   static List<Plan> pricingData = pricingList.map((item) => Plan.fromMap(item)).toList();
+
+  static const insets = Insets();
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
-      classes: "pb-50 l:pb-60 d:pb-80 ${St.page}",
+      classes: "page col-center ${insets.pb50}",
       [
         HomeHero(),
         section([
           SectionTitle(feature),
           div(
-            classes: "grid grid-cols-1 gap-20 l:gap-30 l:grid-cols-2",
+            classes: "grid grid-cols-1 gap-10-20 l:grid-cols-2",
             featureContent.map((data) => CommonCard(data)).toList(),
           ),
         ]),
-        section(classes: "self-stretch", [
+        section([
           SectionTitle(blog),
           const BlogSection(),
         ]),
-        section(classes: "self-stretch", [
+        section([
           SectionTitle(testimonial),
           const Testimonial(),
         ]),
-        section(classes: "self-stretch", [
+        section([
           SectionTitle(pricing),
           PricingGrid(
             pricingData.map((data) => PricingCard(data)).toList(),
