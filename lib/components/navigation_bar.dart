@@ -30,7 +30,6 @@ class NavigationBar extends StatelessComponent {
         break;
       default:
         linkClasses = "text-[18px] px-16 py-8 leading-[150%] hover:bg-dark-green-25 hover:text-white rounded-[8px]";
-
         navClasses = "hidden t-xl:flex overflow-hidden justify-end items-center";
     }
     yield nav(

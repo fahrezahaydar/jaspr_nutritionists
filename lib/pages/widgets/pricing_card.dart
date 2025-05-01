@@ -7,48 +7,38 @@ class PricingCard extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
-      classes: 'flex flex-col p-30 l:p-40 d:p-50 items-start gap-24 l:gap-30 d:gap-40 ${isDetails ? "self-start" : "justify-between self-stretch"}  rounded-[10px] d:rounded-xl border border-green-90 bg-green-95',
+      classes: 'col-start p-10-30 round-10 box-light-3 gap-10-20 ${isDetails ? "self-start" : "justify-between self-stretch"}',
       [
         div(
-          classes: "flex flex-col items-start self-stretch",
+          classes: "col-start *:text-start ",
           [
-            span(
-              classes: "self-stretch text-[22px] t-xl:text-2xl d:text-3xl font-semibold leading-[150%] text-gray-15",
-              [text(data.title)],
-            ),
-            p(
-              classes: "text-start self-stretch ",
-              [text(data.label)],
-            ),
+            h3([text(data.title)]),
+            p([text(data.label)]),
           ],
         ),
         if (isDetails)
-          div(classes: "flex flex-col self-stretch gap-16 d:gap-20", [
+          div(classes: "col-start gap-4-16", [
             div(
-              classes: "flex flex-col self-stretch rounded-md l:rounded-lg border border-green-85 bg-green-90 *:not-last:border-b-green-80",
+              classes: "col-start round-10 box-light-1 *:not-last:border-b-green-80",
               data.features.map((feature) {
                 return div(
-                  classes: "flex self-stretch not-last:border-b border-green-80 px-18 py-14 l:px-20 l:py-16 d:px-24 d:py-20",
+                  classes: "flex self-stretch not-last:border-b border-green-80 px-4-18 py-4-12 ",
                   [text(feature)],
                 );
               }).toList(),
             ),
             if (data.special != null)
               div(
-                classes: "flex *:text-start rounded-md l:rounded-lg self-stretch px-18 py-14 l:px-20 l:py-16 d:px-24 d:py-20 bg-dark-green-20 *:text-white",
+                classes: "flex *:text-start round-10 self-stretch px-4-18 py-4-12 bg-dark-green-20 *:text-white",
                 [
                   p([text(data.special!)])
                 ],
               )
           ]),
-        if (!isDetails)
-          p(
-            classes: "text-start self-stretch text-gray-15",
-            [text(data.subtitle)],
-          ),
+        if (!isDetails) p(classes: "text-start text-gray-15", [text(data.subtitle)]),
         div(
           attributes: {"data-plan": "monthly"},
-          classes: "data-[plan=yearly]:hidden flex items-center justify-center gap-2",
+          classes: "data-[plan=yearly]:hidden row-center  gap-2",
           [
             span(
               classes: "text-[40px] d:text-[50px] font-bold leading-none text-dark-green-25",
@@ -62,7 +52,7 @@ class PricingCard extends StatelessComponent {
         ),
         div(
           attributes: {"data-plan": "monthly"},
-          classes: "data-[plan=monthly]:hidden flex items-center justify-center gap-2",
+          classes: "data-[plan=monthly]:hidden row-center gap-2",
           [
             span(
               classes: "text-[40px] d:text-[50px] font-bold leading-none text-dark-green-25",

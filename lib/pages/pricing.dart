@@ -6,7 +6,6 @@ import '../components/icon_button.dart';
 import '../components/section_title.dart';
 import '../data/pricing_raw.dart';
 import '../components/page_header.dart';
-import '../constants/styles.dart';
 import '../layout/page.dart';
 import '../model/export.dart';
 import '../model/faq.dart';
@@ -30,25 +29,28 @@ class Pricing extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
-      classes: "page ${St.py_50}",
+      id: "pricing",
+      classes: "col-start page py-main",
       [
-        PageHeader(header),
-        section([
+        section(classes: "px-main", [
+          PageHeader(header),
+        ]),
+        section(classes: "col-start px-main gap-10-30 ", [
           PricingGrid(
             pricingData.map((data) => PricingCard(data, isDetails: true)).toList(),
           ),
         ]),
-        section([
+        section(classes: "col-start px-main g-section", [
           table(
-            classes: "flex flex-col self-stretch rounded-xl p-30 border border-green-85 bg-green-95 l:p-50 overflow-auto whitespace-nowrap *:min-w-1120",
+            classes: "col-start rounded-xl p-10-30 box-light-1 overflow-auto whitespace-nowrap *:min-w-1120",
             [
-              thead(classes: "flex self-stretch py-10 l:py-20 d:py-30", [
+              thead(classes: "flex self-stretch py-10-10", [
                 tr(classes: "flex self-stretch w-full ", [
                   for (var str in tableHeader)
                     th(
                       classes: "flex not-first:px-30 first:pr-30 not-first:w-1/5 first:w-2/5 not-first:*:justify-center",
                       [
-                        div(classes: "flex items-center w-full rounded-md l:rounded-lg bg-dark-green-20 self-stretch px-4-20 py-4-14", [
+                        div(classes: "row-center w-full rounded-md l:rounded-lg bg-dark-green-20  px-4-20 py-4-14", [
                           h5(classes: "text-white self-center", [
                             text(str),
                           ]),
@@ -57,7 +59,7 @@ class Pricing extends StatelessComponent {
                     ),
                 ])
               ]),
-              tbody(classes: "flex flex-col self-stretch ", [
+              tbody(classes: "col-start ", [
                 for (var a in featureList)
                   tr(
                     classes: "flex w-full self-stretch not-last:border-b *:not-last:border-r *:border-green-80 border-green-80 *:not-first:px-30 *:first:pr-30 *:not-first:w-1/5 *:first:w-2/5 *:not-first:justify-center *:flex *:py-10-30 ",
@@ -76,18 +78,18 @@ class Pricing extends StatelessComponent {
             ],
           ),
         ]),
-        section([
+        section(classes: "col-start px-main g-section", [
           SectionTitle(faq),
-          div(classes: "flex max-l:flex-col items-start self-stretch gap-20 l:gap-30 d:gap-50", [
+          div(classes: "col-start l:flex-row  gap-10-20", [
             div(
-              classes: "flex flex-col grow items-center p-30 self-stretch rounded-xl border border-green-85 bg-green-95",
+              classes: "col-center grow p-30 round-10 box-light-1",
               faqs.indexed.map((val) {
                 return _buildFAQ(val.$1, val.$2);
               }).toList(),
             ),
-            div(classes: "flex flex-col l:min-w-400 items-center justify-center max-l:self-stretch px-24 py-50 ${St.l("gap-50 py-60")} ${St.d("px-30 py-80")} gap-30 rounded-xl border border-green-85 bg-green-95", [
+            div(classes: "col-center l:min-w-400 justify-center l:self-start py-main px-4-24  gap-10-30 rounded-xl box-light-1", [
               img(classes: "size-80 l:size-100 d:size-120", src: "images/petals_green.svg"),
-              div(classes: "flex flex-col items-center self-stretch gap-4-8 *:self-stretch text-dark-green-20 font-semibold leading-normal text-center *:text-center text-[22px] l:text-[26px] d:text-[34px]", [
+              div(classes: "col-center gap-4-8 *:self-stretch text-dark-green-20 font-semibold leading-normal text-center *:text-center text-[22px] l:text-[26px] d:text-[34px]", [
                 text(cta.title),
                 p([text(cta.subtitle)])
               ]),
@@ -108,9 +110,9 @@ class Pricing extends StatelessComponent {
 
   Component _buildFAQ(int i, FAQ data) {
     return div(id: "faq${char(i)}", classes: "flex self-stretch flex-col first:pb-20 last:pt-20 not-first:not-last:py-20 not-last:border-b border-green-85", [
-      div(classes: "flex items-center self-stretch gap-20 justify-center", [
-        div(classes: "flex flex-col grow items-center self-stretch justify-center", [
-          h6(classes: "flex items-center  self-stretch", [text(data.question)]),
+      div(classes: "row-center gap-20 justify-center", [
+        div(classes: "col-center grow  justify-center", [
+          h6(classes: "row-center", [text(data.question)]),
           p(
             attributes: {"data-answer": "hide"},
             classes: "text-start pt-20 data-[answer=hide]:hidden max-l:hidden",

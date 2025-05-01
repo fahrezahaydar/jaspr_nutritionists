@@ -37,25 +37,26 @@ class Home extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
-      classes: "page col-center ${insets.pb50}",
+      id: "home",
+      classes: "page-2 col-center ${insets.pb50}",
       [
         HomeHero(),
-        section([
+        section(classes: "col-start px-main g-section", [
           SectionTitle(feature),
           div(
-            classes: "grid grid-cols-1 gap-10-20 l:grid-cols-2",
+            classes: "common-grid gap-10-20 ",
             featureContent.map((data) => CommonCard(data)).toList(),
           ),
         ]),
-        section([
+        section(classes: "col-start px-main g-section", [
           SectionTitle(blog),
           const BlogSection(),
         ]),
-        section([
+        section(classes: "col-start px-main g-section", [
           SectionTitle(testimonial),
           const Testimonial(),
         ]),
-        section([
+        section(classes: "col-start px-main g-section", [
           SectionTitle(pricing),
           PricingGrid(
             pricingData.map((data) => PricingCard(data)).toList(),

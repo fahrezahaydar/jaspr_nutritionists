@@ -6,18 +6,18 @@ class BlogCard extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: ' flex flex-col p-24 t:p-30 d:p-40 gap-20 d:gap-40 border border-green-85 rounded-[12px] items-start grow bg-green-95', [
+    yield div(classes: 'col-center p-24 t:p-30 gap-10-20 box-light-1 rounded-xl grow ', [
       img(
-        classes: 'flex w-full rounded-[12px] self-stretch',
+        classes: 'flex w-full rounded-xl self-stretch',
         src: data.media,
       ),
-      div(classes: 'flex flex-col items-start self-stretch gap-18 t:gap-20, d:gap-30', [
-        div(classes: 'flex flex-col items-start self-stretch t:gap-2 d:gap-4 ', [
-          p(classes: "text-start text-gray-20", [
+      div(classes: 'col-start gap-18 t:gap-20 d:gap-30', [
+        div(classes: 'col-start t:gap-2 d:gap-4 *:text-start', [
+          p(classes: " text-gray-20", [
             text(data.subtitle),
           ]),
           h4(
-            classes: "text-start truncate w-full ",
+            classes: "truncate w-full ",
             [text(data.title)],
           )
         ]),

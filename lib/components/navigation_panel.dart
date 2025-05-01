@@ -1,5 +1,7 @@
 import 'package:jaspr/jaspr.dart';
 
+import '../constants/styles.dart';
+
 class NavigationPanel extends StatelessComponent {
   const NavigationPanel({
     required this.leftClick,
@@ -15,11 +17,13 @@ class NavigationPanel extends StatelessComponent {
   final String totalItems;
   final String classes;
 
+  static const st = ComponentStyles();
+
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: "flex items-center justify-center gap-20 self-stretch d:gap-30 $classes", [
+    yield div(classes: "row-center justify-center gap-10-20 $classes", [
       button(
-        classes: "flex font-icon leading-none p-10 d:p-12 d:rounded-[8px] rounded-[6px] border border-green-90 bg-green-95 text-gray-20 text-[28px] hover:bg-green-85",
+        classes: st.panelButton,
         onClick: leftClick,
         [text("chevron_left")],
       ),
@@ -29,7 +33,7 @@ class NavigationPanel extends StatelessComponent {
         text(totalItems),
       ]),
       button(
-        classes: "flex leading-none font-icon p-10 d:p-12 d:rounded-[8px] rounded-[6px] border border-green-90 text-gray-20 text-[28px] bg-green-95 hover:bg-green-85",
+        classes: st.panelButton,
         onClick: rightClick,
         [text("chevron_right")],
       ),

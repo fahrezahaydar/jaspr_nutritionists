@@ -4,7 +4,6 @@ import '../components/common_card.dart';
 import '../components/cta.dart';
 import '../components/page_header.dart';
 import '../components/section_title.dart';
-import '../constants/styles.dart';
 import '../data/process.raw.dart';
 import '../layout/page.dart';
 import '../model/export.dart';
@@ -20,10 +19,13 @@ class Process extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
-      classes: "page ${St.py_50}",
+      id: "process",
+      classes: "page col-start py-main ",
       [
-        PageHeader(header),
-        section([
+        section(classes: "px-main", [
+          PageHeader(header),
+        ]),
+        section(classes: "col-start px-main g-section", [
           SectionTitle(sectionTitle1),
           div(
             classes: "grid grid-cols-1 gap-20 t-xl:gap-30 t-xl:grid-cols-2",

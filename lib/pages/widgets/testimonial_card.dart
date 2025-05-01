@@ -7,26 +7,18 @@ class TestimonialCard extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
-      classes: 'flex flex-col items-center justify-between self-stretch rounded-[10px] d:rounded-l bg-green-97 border border-green-90 $classes',
+      classes: 'col-center justify-between round-10 box-light-2 $classes',
       [
         div(
-          classes: "flex flex-col items-start gap-40 self-stretch d:gap-50 p-24 t:p-30 d:p-40 border-b border-green-90",
+          classes: "col-start gap-10-30 p-10-20 border-b border-green-90",
           [
-            img(
-              classes: "size-34 d:size-40",
-              src: "images/svg/testi.svg",
-            ),
-            p(classes: "text-start self-stretch", [
-              text(data.testimonial),
-            ]),
+            img(classes: "size-34 d:size-40", src: "images/svg/testi.svg"),
+            p(classes: "text-start self-stretch", [text(data.testimonial)]),
           ],
         ),
-        div(classes: 'flex px-24 t-xl:px-30 d:px-40 py-18 l:py-20 d:py-30 items-center gap-10 d:gap-12 self-stretch bg-green-95', [
+        div(classes: 'px-10-20 py-18 l:py-20 d:py-30 row-center gap-10 d:gap-12 bg-green-95', [
           Avatar(data.avatar),
-          p(
-            classes: "max-t:text-[16px]",
-            [text(data.name)],
-          ),
+          p([text(data.name)]),
         ]),
       ],
     );

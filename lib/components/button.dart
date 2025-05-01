@@ -31,7 +31,7 @@ class Button extends StatelessComponent {
     void Function()? onClick,
   }) {
     return Button(
-      classes: "border border-green-85 bg-green-95",
+      classes: "box-light-1",
       onClick: onClick,
       children,
     );

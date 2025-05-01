@@ -12,22 +12,16 @@ class Footer extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield footer([
-      div(classes: 'flex justify-between self-stretch max-t-xl:flex-col max-t-xl:gap-30', [
-        div(classes: 'flex justify-between self-stretch items-center ', [
+      div(classes: 'col-start justify-between t-xl:items-center t-xl:flex-row max-t-xl:gap-30', [
+        div(classes: 'row-center justify-between', [
           Logo(),
           _buildScrollToTop(classes: "t-xl:hidden"),
         ]),
         NavigationBar(routes: Routes.all, type: NavBarType.footer),
         _buildScrollToTop(classes: "max-t-xl:hidden"),
       ]),
-      //     padding: 20px;
-      //     flex-direction: column;
-      //     gap: 20px;
-
-      // }
-
-      div(classes: 'flex border max-l:flex-col gap-20 p-20 items-start self-stretch border-dark-green-25 bg-dark-green-20 rounded-lg justify-between', [
-        div(classes: 'flex items-start self-stretch gap-16 t:gap-20 max-t:flex-col', [
+      div(classes: 'col-start  l:flex-row gap-20 p-20 box-dark-1 rounded-lg justify-between', [
+        div(classes: 'col-start gap-16 t:gap-20 t:flex-row', [
           const ContactButton(isFooter: true),
         ]),
         p(classes: "text-gray-95 font-normal leading-normal self-center", [

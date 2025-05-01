@@ -4,7 +4,6 @@ import 'package:jaspr_riverpod/jaspr_riverpod.dart';
 import '../components/button.dart';
 import '../components/page_header.dart';
 import '../components/tab_menu.dart';
-import '../constants/styles.dart';
 import '../data/blog_raw.dart';
 import '../layout/page.dart';
 import '../model/blog.dart';
@@ -25,16 +24,15 @@ class Blog extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
-      classes: "page py-50 l:py-80 d:py-100",
+      id: "blog",
+      classes: "page py-main col-start",
       [
-        div(classes: "flex flex-col self-stretch", [
+        section(classes: "col-start px-main", [
           PageHeader(header),
-          section([
-            TabMenu(
-              data: list,
-              provider: blogpostProvider,
-            ),
-          ]),
+          TabMenu(
+            data: list,
+            provider: blogpostProvider,
+          ),
         ]),
         Builder(builder: (context) sync* {
           var val = context.watch(blogpostProvider);
@@ -45,17 +43,12 @@ class Blog extends StatelessComponent {
             data = listData.where((blog) => blog.category == list[val]).toList();
           }
           yield section(
-            classes: "self-stretch ${St.gap_30}",
+            classes: "common-grid px-main gap-10-30",
             [
-              div(
-                classes: "grid grid-cols-1 rounded-[10px] d:rounded-xl border border-green-85 l:grid-cols-2  self-stretch ",
-                [
-                  for (var i = 0; i < data.length; i++)
-                    BlogCard(
-                      data[i],
-                    ),
-                ],
-              )
+              for (var i = 0; i < data.length; i++)
+                BlogCard(
+                  data[i],
+                ),
             ],
           );
         }),

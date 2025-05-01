@@ -15,7 +15,7 @@ class TabMenu extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     var index = context.watch(provider);
     yield div(
-      classes: "flex max-t-xl:overflow-auto max-t-xl:whitespace-nowrap p-20 items-center gap-20 self-stretch rounded-b-[10px] bg-dark-green-20 l:py-24 l:px-80 t-xl:justify-between d:py-30 d:px-150 d:rounded-b-xl",
+      classes: "row-center max-t-xl:overflow-auto max-t-xl:whitespace-nowrap py-4-20 px-main gap-20  rounded-b-[10px] bg-dark-green-20  t-xl:justify-between d:rounded-b-xl",
       [
         for (var i = 0; i < data.length; i++)
           button(

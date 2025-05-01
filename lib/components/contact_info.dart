@@ -10,11 +10,11 @@ class ContactButton extends StatelessComponent {
   final bool isFooter;
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    String button = isFooter ? "flex-row p-14 gap-8" : "flex-col p-20 gap-14 l:p-24 l:gap-16 d:p-30 d:gap-24";
+    String button = isFooter ? "flex-row p-14 gap-8" : "flex-col p-20 gap-4-16 l:p-24 d:p-30";
     String icon = isFooter ? "text-[20px] t-xl:text-[24px]'" : "text-[26px] d:text-[34px]";
     for (var i in contactInfo) {
       yield div(
-        classes: "flex flex-1 items-center self-stretch justify-center rounded-md bg-dark-green-20 border border-dark-green-25 $button",
+        classes: "grow row-center justify-center rounded-md box-dark-1 $button",
         [
           div(
             classes: 'font-icon text-green-70 $icon',

@@ -8,8 +8,8 @@ class BlogSection extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     var index = context.watch(blogProvider);
     var total = blogContent.length;
-    yield div(classes: "flex flex-col items-start gap-30 self-stretch t:gap-40 d:gap-50", [
-      div(classes: 'grid grid-col-1 l:grid-cols-2 gap-20 l:gap-30 self-stretch', [
+    yield div(classes: "col-center gap-10-30 ", [
+      div(classes: 'common-grid gap-10-20', [
         BlogCard(blogContent[index]),
         BlogCard(blogContent[index + 1]),
       ]),

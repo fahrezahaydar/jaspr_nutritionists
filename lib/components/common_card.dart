@@ -1,5 +1,6 @@
 import 'package:jaspr/jaspr.dart';
 
+import '../constants/styles.dart';
 import '../model/content.dart';
 
 class CommonCard extends StatelessComponent {
@@ -7,14 +8,12 @@ class CommonCard extends StatelessComponent {
   final Content data;
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: 'flex flex-col p-24 t:p-30 l:px-50 l:py-40  gap-20 l:gap-24 border border-green-90 rounded-xl items-start grow bg-green-95', [
-      div(classes: 'flex gap-10 l:gap-14 items-center self-stretch', [
-        div(classes: 'flex p-12 l:p-14 rounded-lg items-center text-start bg-green-70', [
-          img(
-            classes: 'size-24 t:size-30 l:size-40',
-            src: data.media!,
-          ),
-        ]),
+    yield div(classes: st.card1, [
+      div(classes: 'row-center gap-4-10 ', [
+        img(
+          classes: 'size-48 t:size-54 l:size-68 p-12 l:p-14 rounded-lg  bg-green-70',
+          src: data.media!,
+        ),
         h5(classes: 'text-start', [
           text(data.title),
         ])

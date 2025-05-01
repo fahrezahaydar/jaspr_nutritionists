@@ -17,7 +17,7 @@ class Header extends StatelessComponent {
         routes: routes,
       ),
       div(
-        classes: ' text-green-70 text-[34px] font-icon t-xl:hidden',
+        classes: 'text-green-70 text-4xl font-icon t-xl:hidden',
         events: events(
           onClick: () => toggleSideNav(),
         ),
@@ -31,11 +31,11 @@ class Header extends StatelessComponent {
         div(classes: 'nav-bg', events: events(onClick: toggleSideNav), []),
         div(classes: 'sidenav', [
           button(
-            classes: ' font-icon text-green-70 text-[34px] self-start',
+            classes: ' font-icon text-green-70 text-4xl self-start',
             onClick: toggleSideNav,
             [text('close')],
           ),
-          const Logo(classes: "flex justify-center items-center"),
+          const Logo(classes: "col-center"),
           NavigationBar(
             type: NavBarType.sidebar,
             routes: routes,

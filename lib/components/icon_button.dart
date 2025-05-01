@@ -19,7 +19,7 @@ class IconButtonState extends State<IconButton> {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield button(
-      classes: 'p-14 d:p-18 border border-green-90 rounded-md d:rounded-xl text-gray-30 font-icon d:text-[24px] leading-[100%] bg-green-95 no-underline text-[20px]',
+      classes: 'p-14 d:p-18 box-light-3 round-10 text-gray-30 font-icon d:text-[24px] leading-none no-underline text-[20px]',
       styles: component.style,
       onClick: () {
         setState(() {
@@ -38,7 +38,7 @@ class MediaButton extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield i(
-      classes: 'p-14 d:p-18 rounded-md d:rounded-xl text-gray-15 bg-green-70 $classes',
+      classes: 'p-14 d:p-18 round-10 text-gray-15 bg-green-70 $classes',
       [],
     );
   }

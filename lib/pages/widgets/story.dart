@@ -9,9 +9,9 @@ class Story extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     var i = context.watch(storyProvider);
     var totalItems = stories.length;
-    yield div(classes: "flex flex-col items-start gap-30 self-stretch l:gap-40 d:gap-50", [
+    yield div(classes: "col-start gap-10-30", [
       div(
-        classes: "flex flex-col items-start self-stretch rounded-xl border border-green-90 overflow-clip",
+        classes: "col-start round-10 box-light-3 overflow-clip",
         [
           StoryWidget(i, stories[i]),
           StoryWidget(i + 1, stories[i + 1]),
@@ -34,7 +34,6 @@ class Story extends StatelessComponent {
         },
         currentIndex: "${i + 1}",
         totalItems: "$totalItems",
-        classes: "self-stretch",
       )
     ]);
   }

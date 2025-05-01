@@ -17,21 +17,15 @@ class ListTile extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: 'flex bg-green-97 self-stretch gap-20 flex-col items-end l:items-center max-l:justify-center t:flex-row p-16 d:p-20 border border-green-90 rounded-[10px] d:rounded-xl ', [
-      div(classes: "flex items-center gap-10 grow shrink-0 self-stretch d:gap-16 l:gap-14", [
+    yield div(classes: 'col-start gap-20 t:flex-row p-16 d:p-20 box-light-2 round-10 ', [
+      div(classes: "row-center grow gap-4-10 ", [
         Avatar(leading),
-        div(classes: "flex flex-col items-start grow shrink-0", [
-          h6(
-            classes: "text-start",
-            [text(title)],
-          ),
-          p(
-            classes: "text-start",
-            [text(subtitle)],
-          )
+        div(classes: "col-start *:text-start", [
+          h6([text(title)]),
+          p([text(subtitle)])
         ]),
       ]),
-      div(classes: 'flex items-start gap-8 d:gap-10', [
+      div(classes: 'row-end gap-8 d:gap-10', [
         IconButton("favorite"),
         IconButton("bookmark"),
       ]),

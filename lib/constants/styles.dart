@@ -1,16 +1,13 @@
-class St {
-  static String page = "flex flex-col justify-center items-center gap-50 l:gap-100 d:gap-150";
-  static String py_50 = "py-50 l:py-60 d:py-80";
-  static String py_30 = "py-30 l:py-40 d:py-50";
-  static var gap_20 = "gap-20 d:gap-30";
-  static var gap_30 = "gap-30 l:gap-40 d:gap-50";
-  static var p_30 = "p-30 l:p-40 d:p-50";
+const st = ComponentStyles();
 
-  static String l(String classes) {
-    return classes.split(' ').map((cls) => 'l:$cls').join(' ');
-  }
+class ComponentStyles {
+  const ComponentStyles();
 
-  static String d(String classes) {
-    return classes.split(' ').map((cls) => 'd:$cls').join(' ');
-  }
+  final String banner = 'border border-b-dark-green-20 bg-dark-green-15 px-main pb-14 pt-40 col-center justify-center relative overflow-hidden';
+  final String bannerBox = "row-center relative py-10 px-20 box-dark-1 rounded-md overflow-hidden justify-center gap-8 ";
+  final String cta = 'col-center mx-main l:flex-row relative overflow-clip p-40 t-xl:p-60 d:p-80 gap-20 l:gap-150 round-10 box-light-1';
+
+  final String panelButton = "font-icon cursor-pointer leading-none p-10 d:p-12 d:rounded-lg rounded-md box-light-3 text-gray-20 text-[28px] hover:bg-green-85";
+
+  final String card1 = 'col-center box-light-1 rounded-xl grow gap-4-20 p-24 t:p-30 l:px-50 l:py-40';
 }

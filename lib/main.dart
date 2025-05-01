@@ -30,10 +30,14 @@ void main() {
       // Styles are defined using type-safe css bindings and can be freely chained and nested.
       css('html, body').styles(
         width: 100.percent,
-        minHeight: 100.vh,
         padding: Padding.zero,
         margin: Margin.zero,
       ),
+      css.media(MediaQuery.screen(minWidth: 2340.px), [
+        css('html, body').styles(
+          overflow: Overflow.hidden,
+        ),
+      ])
     ],
     head: [
       link(rel: "stylesheet", href: "https://fonts.googleapis.com/icon?family=Material+Icons"),

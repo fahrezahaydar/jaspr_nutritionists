@@ -9,9 +9,9 @@ class Testimonial extends StatelessComponent {
     var i = context.watch(teestimonialProvider);
     var totalItems = testimonialContent.length;
     yield div(
-      classes: "flex flex-col items-start gap-30 self-stretch l:gap-40 d:gap-50",
+      classes: "col-start gap-10-30",
       [
-        div(classes: 'grid grid-cols-1 self-stretch t-xl:grid-cols-2 gap-20 l:grid-cols-3 d:gap-30 *:max-l:last:hidden *:max-t-xl:nth-last-2:hidden', [
+        div(classes: 'grid grid-cols-1 t-xl:grid-cols-2 l:grid-cols-3 gap-10-20 *:max-l:last:hidden *:max-t-xl:nth-last-2:hidden', [
           TestimonialCard(testimonialContent[i]),
           TestimonialCard(testimonialContent[i + 1 < totalItems ? i + 1 : i]),
           TestimonialCard(testimonialContent[i + 2 < totalItems ? i + 2 : 1]),
