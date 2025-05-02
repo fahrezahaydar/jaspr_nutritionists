@@ -12,7 +12,7 @@ class Footer extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield footer([
-      div(classes: 'col-start justify-between t-xl:items-center t-xl:flex-row max-t-xl:gap-30', [
+      div(classes: 'col-start justify-between t-xl:items-center t-xl:flex-row max-t-xl:gap-20', [
         div(classes: 'row-center justify-between', [
           Logo(),
           _buildScrollToTop(classes: "t-xl:hidden"),
@@ -20,8 +20,8 @@ class Footer extends StatelessComponent {
         NavigationBar(routes: Routes.all, type: NavBarType.footer),
         _buildScrollToTop(classes: "max-t-xl:hidden"),
       ]),
-      div(classes: 'col-start  l:flex-row gap-20 p-20 box-dark-1 rounded-lg justify-between', [
-        div(classes: 'col-start gap-16 t:gap-20 t:flex-row', [
+      div(classes: 'col-start l:flex-row gap-20 p-20 box-dark-1 rounded-lg justify-between', [
+        div(classes: 'col-start gap2-4-16 t:flex-row', [
           const ContactButton(isFooter: true),
         ]),
         p(classes: "text-gray-95 font-normal leading-normal self-center", [
@@ -33,7 +33,7 @@ class Footer extends StatelessComponent {
 
   Component _buildScrollToTop({String? classes}) {
     return div(
-      classes: 'flex items-center gap-6 t-xl:gap-20 $classes ',
+      classes: 'flex items-center gap-6 t-xl:gap-14 d:gap-20 $classes ',
       events: events(
         onClick: () {
           web.document.body!.scrollTop = 0;
@@ -44,7 +44,7 @@ class Footer extends StatelessComponent {
         p(classes: "inline text-white", [
           text('Go to Top'),
         ]),
-        button(classes: 'leading-none font-icon p-[14px] bg-dark-green-20 text-white text-[24px] rounded-[50%] d:text-[34px] ', [
+        button(classes: 'leading-none font-icon p-14 bg-dark-green-20 text-white text-[24px] rounded-[50%] d:text-[34px] ', [
           text('arrow_upward'),
         ])
       ],

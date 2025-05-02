@@ -8,8 +8,6 @@ import '../components/common_card.dart';
 import '../components/list_tile.dart';
 import '../components/navigation_panel.dart';
 import '../components/section_title.dart';
-import '../constants/inset.dart';
-import '../constants/text_theme.dart';
 import '../data/home_data.dart';
 import '../layout/page.dart';
 import '../model/export.dart';
@@ -33,18 +31,17 @@ class Home extends StatelessComponent {
   static List<Content> featureContent = Content.fromMap(featuresData);
   static List<Plan> pricingData = pricingList.map((item) => Plan.fromMap(item)).toList();
 
-  static const insets = Insets();
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
       id: "home",
-      classes: "page-2 col-center ${insets.pb50}",
+      classes: "page-2 col-center pb-50 t:80 l:pb-100 d:pb-150",
       [
         HomeHero(),
         section(classes: "col-start px-main g-section", [
           SectionTitle(feature),
           div(
-            classes: "common-grid gap-10-20 ",
+            classes: "common-grid gap2-10-20 ",
             featureContent.map((data) => CommonCard(data)).toList(),
           ),
         ]),

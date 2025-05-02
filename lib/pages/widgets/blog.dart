@@ -9,7 +9,7 @@ class BlogSection extends StatelessComponent {
     var index = context.watch(blogProvider);
     var total = blogContent.length;
     yield div(classes: "col-center gap-10-30 ", [
-      div(classes: 'common-grid gap-10-20', [
+      div(classes: 'common-grid gap2-10-20', [
         BlogCard(blogContent[index]),
         BlogCard(blogContent[index + 1]),
       ]),

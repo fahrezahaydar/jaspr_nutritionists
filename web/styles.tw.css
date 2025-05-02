@@ -70,14 +70,6 @@
         @apply flex flex-row items-end self-stretch;
     }
 
-    .page {
-        @apply justify-center gap-50 l:gap-80 d:gap-100;
-    }
-
-    .page-2 {
-        @apply justify-center gap-50 l:gap-100 d:gap-150;
-    }
-
     .box-dark-1 {
         @apply border border-dark-green-25 bg-dark-green-20;
     }
@@ -103,6 +95,11 @@
         @apply px-24 py-14 cursor-pointer;
     }
 
+    .btn-2 {
+        @apply flex cursor-pointer px-24 py-10 items-center justify-center rounded-md d:rounded-lg text-gray-30;
+        @apply font-sans text-[14px] d:text-lg leading-[150%] font-semibold;
+    }
+
     .sidenav {
         @apply flex l:hidden flex-col justify-start items-center rounded-b-[20px] bg-dark-green-15;
         @apply fixed top-0 right-0 z-3;
@@ -123,6 +120,14 @@
         @apply block;
     }
 
+    .page {
+        @apply justify-center gap-50 l:gap-80 d:gap-100;
+    }
+
+    .page-2 {
+        @apply justify-center gap-50 l:gap-100 d:gap-150;
+    }
+
     .px-main {
         @apply px-16 t-xl:px-80 d:px-162;
     }
@@ -139,6 +144,10 @@
         @apply gap-50 t-xl:gap-60 d:gap-80;
     }
 
+    .g-card {
+        @apply gap-24 t-xl:gap-30 d:gap-40;
+    }
+
     .round-10 {
         @apply rounded-[10px] d:rounded-xl;
     }
@@ -146,29 +155,45 @@
     .common-grid {
         @apply grid grid-cols-1 l:grid-cols-2 self-stretch;
     }
+
+    .hero-picture {
+        @apply min-h-lvw l:min-h-[45vw] w-full l:min-w-1/2 bg-cover bg-bottom;
+    }
+
+    .grid-bg {
+        @apply bg-green-70 bg-[url(/images/grid.png)];
+    }
+
+    .text-1 {
+        @apply text-dark-green-15 text-lg l:text-[22px] d:text-[28px];
+    }
+
+    .text-2 {
+        @apply text-base d:text-lg;
+    }
 }
 
 @layer base {
     h1 {
-        @apply m-0 text-dark-green-15 text-[38px] l:text-[48px] d:text-[58px] text-center font-sans font-black leading-none;
+        @apply m-0 text-dark-green-15 text-[38px] l:text-[48px] d:text-[58px] font-sans font-black leading-none;
     }
     h2 {
-        @apply m-0 text-gray-15 text-[28px] l:text-[38px] d:text-[48px] text-center font-sans font-bold leading-normal;
+        @apply m-0 text-gray-15 text-[28px] l:text-[38px] d:text-[48px] font-sans font-bold leading-normal;
     }
     h3 {
-        @apply m-0 text-gray-15 text-[22px] l:text-[24px] d:text-[30px] text-center font-sans font-semibold leading-normal;
+        @apply m-0 text-gray-15 text-[22px] l:text-[24px] d:text-[30px] font-sans font-semibold leading-normal;
     }
     h4 {
-        @apply m-0 text-gray-15 text-[20px] l:text-[22px] d:text-[26px] text-center font-sans font-semibold leading-normal;
+        @apply m-0 text-gray-15 text-[20px] l:text-[22px] d:text-[26px] font-sans font-semibold leading-normal;
     }
     h5 {
-        @apply m-0 text-gray-15 text-[18px] l:text-[20px] d:text-[24px] text-center font-sans font-semibold leading-normal;
+        @apply m-0 text-gray-15 text-[18px] l:text-[20px] d:text-[24px] font-sans font-semibold leading-normal;
     }
     h6 {
-        @apply m-0 text-gray-15 text-[16px] l:text-[18px] d:text-[20px] text-center font-sans font-semibold leading-normal;
+        @apply m-0 text-gray-15 text-[16px] l:text-[18px] d:text-[20px] font-sans font-semibold leading-normal;
     }
     p {
-        @apply m-0 text-gray-15 text-[14px] l:text-[16px] d:text-[18px] text-center font-sans font-medium leading-normal;
+        @apply m-0 text-gray-30 text-[14px] l:text-[16px] d:text-[18px] font-sans font-medium leading-normal;
     }
 
     header {
@@ -179,8 +204,14 @@
     footer {
         @apply flex border border-t-gray-15 flex-col items-start bg-dark-green-15;
         @apply gap-30 t-xl:gap-40 d:gap-50;
-        @apply px-16 t-xl:px-80 d:px-162 py-30 t-xl:py-40 d:py-80;
+        @apply px-16 t-xl:px-80 d:px-162 py-30 t-xl:py-40 d:py-50;
     }
+}
+
+@utility p-10-* {
+    @apply p-[calc(--value(integer)*var(--spacing))];
+    @apply l:p-[calc((--value(integer)+10)*var(--spacing))];
+    @apply d:p-[calc((--value(integer)+20)*var(--spacing))];
 }
 
 @utility p-10-* {
@@ -219,6 +250,12 @@
     @apply d:pt-[calc((--value(integer)+20)*var(--spacing))];
 }
 
+@utility gap-2-* {
+    @apply gap-[calc(--value(integer)*var(--spacing))];
+    @apply l:gap-[calc((--value(integer)+2)*var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+4)*var(--spacing))];
+}
+
 @utility gap-4-* {
     @apply gap-[calc(--value(integer)*var(--spacing))];
     @apply l:gap-[calc((--value(integer)+4)*var(--spacing))];
@@ -229,4 +266,29 @@
     @apply gap-[calc(--value(integer)*var(--spacing))];
     @apply l:gap-[calc((--value(integer)+10)*var(--spacing))];
     @apply d:gap-[calc((--value(integer)+20)*var(--spacing))];
+}
+
+@utility gap-20-* {
+    @apply gap-[calc(--value(integer)*var(--spacing))];
+    @apply l:gap-[calc((--value(integer)+20)*var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+40)*var(--spacing))];
+}
+@utility gap2-2-* {
+    @apply gap-[calc(--value(integer)*var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+2)*var(--spacing))];
+}
+
+@utility gap2-4-* {
+    @apply gap-[calc(--value(integer)*var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+4)*var(--spacing))];
+}
+
+@utility gap2-6-* {
+    @apply gap-[calc(--value(integer)*var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+6)*var(--spacing))];
+}
+
+@utility gap2-10-* {
+    @apply gap-[calc(--value(integer)*var(--spacing))];
+    @apply d:gap-[calc((--value(integer)+10)*var(--spacing))];
 }

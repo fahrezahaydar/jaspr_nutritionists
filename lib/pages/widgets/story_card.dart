@@ -1,5 +1,7 @@
 part of '../about.dart';
 
+//TODO: Text 20 24 28
+
 class StoryWidget extends StatelessComponent {
   const StoryWidget(this.i, this.data, {super.key});
   final StoryData data;
@@ -16,7 +18,7 @@ class StoryWidget extends StatelessComponent {
         ),
         div(classes: "self-stretch h-12 w-full bg-green-70 t-xl:w-12 t-xl:h-auto d:w-18", []),
         div(
-          classes: "col-start t-xl:w-[calc(50%-6px)] justify-center p-30 l:p-60 d:p-80 gap-10-20 *:text-start *:self-stretch",
+          classes: "col-start t-xl:w-[calc(50%-6px)] justify-center p-30 l:p-60 d:p-80 gap-10-20 *:self-stretch",
           [
             span(
               classes: "py-8 border-b-3 border-green-70 font-semibold leading-none text-dark-green-15 text-xl l:text-2xl d:text-[28px]",

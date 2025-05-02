@@ -6,24 +6,17 @@ class BlogCard extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: 'col-center p-24 t:p-30 gap-10-20 box-light-1 rounded-xl grow ', [
+    yield div(classes: 'col-center p-24 gap-20 d:gap-40 box-light-1 round-10', [
       img(
-        classes: 'flex w-full rounded-xl self-stretch',
+        classes: 'flex w-full rounded-10',
         src: data.media,
       ),
       div(classes: 'col-start gap-18 t:gap-20 d:gap-30', [
-        div(classes: 'col-start t:gap-2 d:gap-4 *:text-start', [
-          p(classes: " text-gray-20", [
-            text(data.subtitle),
-          ]),
-          h4(
-            classes: "truncate w-full ",
-            [text(data.title)],
-          )
+        div(classes: 'col-start gap-2-0', [
+          p(classes: " text-gray-20", [text(data.subtitle)]),
+          h4([text(data.title)])
         ]),
-        p(classes: "text-start", [
-          text(data.body),
-        ]),
+        p([text(data.body)]),
         ListTile(
           leading: data.avatar,
           title: data.person,

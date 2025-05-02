@@ -26,7 +26,7 @@ class ContactUs extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
       id: "contact-us",
-      classes: "page col-start py-main",
+      classes: "page-2 col-start py-main",
       [
         section(classes: "col-start px-main", [
           PageHeader(header),
@@ -41,7 +41,7 @@ class ContactUs extends StatelessComponent {
               [
                 div(
                   id: "Form",
-                  classes: "col-start grow gap-10-30 ",
+                  classes: "col-start flex-1 gap-10-30 ",
                   [
                     form(
                       id: "Form Element",
@@ -117,7 +117,7 @@ class ContactUs extends StatelessComponent {
                 ),
                 div(
                   id: "Sub Container",
-                  classes: "col-start grow gap-10-20",
+                  classes: "col-start flex-1 gap-10-20",
                   [
                     iframe(
                       classes: "flex self-stretch flex-1 bg-dark-green-15 rounded-md max-l:aspect-square",

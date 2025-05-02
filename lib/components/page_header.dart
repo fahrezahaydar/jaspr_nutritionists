@@ -15,7 +15,7 @@ class PageHeader extends StatelessComponent {
           src: "images/svg/plus_bg.svg",
         ),
         div(
-          classes: "flex p-14 z-1 d:p-20 items-center rounded-[10px] d:rounded-xl border-3 d:border-4 bg-linear-0 from-transparent to-green-70 border-white ",
+          classes: "flex p-14 z-1 d:p-20 items-center round-10 border-3 d:border-4 bg-linear-0 from-transparent to-green-70 border-white ",
           [
             img(
               classes: "size-34 t-xl:size-40 d:size-50",
@@ -23,19 +23,10 @@ class PageHeader extends StatelessComponent {
             ),
           ],
         ),
-        div(
-          classes: "col-start gap-4-6 ",
-          [
-            h2(
-              classes: "self-stretch",
-              [text(header.title)],
-            ),
-            p(
-              classes: "text-gray-20 self-stretch",
-              [text(header.subtitle)],
-            ),
-          ],
-        )
+        div(classes: "col-start gap-4-6 *:self-stretch *:text-center", [
+          h2([text(header.title)]),
+          p(classes: "text-gray-20 ", [text(header.subtitle)]),
+        ])
       ],
     );
   }

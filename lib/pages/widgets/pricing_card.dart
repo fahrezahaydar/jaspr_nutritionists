@@ -7,10 +7,10 @@ class PricingCard extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
-      classes: 'col-start p-10-30 round-10 box-light-3 gap-10-20 ${isDetails ? "self-start" : "justify-between self-stretch"}',
+      classes: 'col-start p-10-30 round-10 box-light-3 g-card ${isDetails ? "self-start" : "justify-between"}',
       [
         div(
-          classes: "col-start *:text-start ",
+          classes: "col-start gap2-2-0 ",
           [
             h3([text(data.title)]),
             p([text(data.label)]),
@@ -35,7 +35,7 @@ class PricingCard extends StatelessComponent {
                 ],
               )
           ]),
-        if (!isDetails) p(classes: "text-start text-gray-15", [text(data.subtitle)]),
+        if (!isDetails) p(classes: "text-gray-15 self-stretch", [text(data.subtitle)]),
         div(
           attributes: {"data-plan": "monthly"},
           classes: "data-[plan=yearly]:hidden row-center  gap-2",
@@ -45,7 +45,7 @@ class PricingCard extends StatelessComponent {
               [text(data.price.monthly)],
             ),
             span(
-              classes: "text-[16px] d:text-[18px] font-medium leading-[150%] text-gray-20",
+              classes: "text-2 font-medium leading-[150%] text-gray-20",
               [text("/monthly")],
             ),
           ],
@@ -59,7 +59,7 @@ class PricingCard extends StatelessComponent {
               [text(data.price.yearly)],
             ),
             span(
-              classes: " text-[16px] d:text-[18px] font-medium leading-[150%] text-gray-20",
+              classes: " text-2  font-medium leading-[150%] text-gray-20",
               [text("/yearly")],
             ),
           ],

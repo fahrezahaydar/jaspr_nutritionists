@@ -9,7 +9,7 @@ class Story extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     var i = context.watch(storyProvider);
     var totalItems = stories.length;
-    yield div(classes: "col-start gap-10-30", [
+    yield div(classes: "col-start gap2-10-20", [
       div(
         classes: "col-start round-10 box-light-3 overflow-clip",
         [
@@ -32,8 +32,8 @@ class Story extends StatelessComponent {
             context.read(storyProvider.notifier).state = totalItems - 2;
           }
         },
-        currentIndex: "${i + 1}",
-        totalItems: "$totalItems",
+        currentIndex: "${(i / 2).round() + 1}",
+        totalItems: "${(totalItems / 2).round()}",
       )
     ]);
   }

@@ -30,12 +30,10 @@ class Pricing extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
       id: "pricing",
-      classes: "col-start page py-main",
+      classes: "col-start page-2 py-main",
       [
-        section(classes: "px-main", [
+        section(classes: "col-start page px-main", [
           PageHeader(header),
-        ]),
-        section(classes: "col-start px-main gap-10-30 ", [
           PricingGrid(
             pricingData.map((data) => PricingCard(data, isDetails: true)).toList(),
           ),

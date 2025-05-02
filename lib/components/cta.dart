@@ -28,7 +28,7 @@ class CTA extends StatelessComponent {
           src: "images/petals.svg",
         ),
         div(
-          classes: "col-center z-1 gap-10 l:flex-1 *:l:text-start *:self-stretch",
+          classes: "col-center z-1 gap-10 l:flex-1 *:max-l:text-center *:self-stretch",
           [
             h3([text(data.title)]),
             p(classes: " text-gray-20", [text(data.subtitle)]),

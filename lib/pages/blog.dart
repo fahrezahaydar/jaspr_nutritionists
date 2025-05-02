@@ -25,7 +25,7 @@ class Blog extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
       id: "blog",
-      classes: "page py-main col-start",
+      classes: "py-main col-start gap-10-30",
       [
         section(classes: "col-start px-main", [
           PageHeader(header),
@@ -43,7 +43,7 @@ class Blog extends StatelessComponent {
             data = listData.where((blog) => blog.category == list[val]).toList();
           }
           yield section(
-            classes: "common-grid px-main gap-10-30",
+            classes: "common-grid px-main gap2-10-20",
             [
               for (var i = 0; i < data.length; i++)
                 BlogCard(

@@ -70,4 +70,40 @@ var storyData = [
     "date": "July 15, 2019",
     "image": "story4",
   },
+  {
+    "title": "Enhanced Support Story",
+    "text": "In response to the growing demand for personalized nutrition coaching, Nutritionist expanded its team of qualified nutritionists and dietitians. This milestone enabled us to provide even more individualized care and support to our clients.",
+    "date": "April 1, 2018",
+    "image": "story5",
+  },
+  {
+    "title": "Innovating for Clients Story",
+    "text": "Nutritionist introduced a mobile app, revolutionizing the way clients engage with their personalized nutrition plans. The app allowed for easy tracking of progress, access to resources, and seamless communication with their dedicated nutrition coaches.",
+    "date": "January 20, 2017",
+    "image": "story6",
+  },
+  {
+    "title": "Celebrating Success Stories",
+    "text": "Nutritionist celebrated its 500th client success story. These stories showcased the positive impact of personalized nutrition coaching on individuals' lives, further motivating our team to continue providing exceptional services.",
+    "date": "September 5, 2015",
+    "image": "story7",
+  },
+  {
+    "title": "Expanding Reach Story",
+    "text": "Nutritionist expanded its services by launching an online platform, allowing individuals from all over the world to access personalized nutrition plans and expert guidance. This milestone brought convenience and accessibility to our growing client base.",
+    "date": "June 10, 2014",
+    "image": "story8",
+  },
+  {
+    "title": "Research and Expertise Story",
+    "text": "After extensive research and collaborating with nutrition experts, Sarah Mitchell and her team developed a comprehensive program rooted in scientific knowledge and evidence-based strategies. This milestone marked the establishment of Nutritionist as a trusted source of personalized nutrition coaching.",
+    "date": "March 15, 2012",
+    "image": "story9",
+  },
+  {
+    "title": "The Inception Story",
+    "text": "On this day, Nutritionist was born with the vision of helping individuals achieve their weight loss and health goals through personalized nutrition coaching. The founder, Sarah Mitchell, recognized the need for a sustainable and effective approach to healthy living, and thus began the journey of Nutritionist.",
+    "date": "January 1, 2010",
+    "image": "story10",
+  },
 ];

@@ -20,7 +20,7 @@ class Process extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
       id: "process",
-      classes: "page col-start py-main ",
+      classes: "page-2 col-start py-main ",
       [
         section(classes: "px-main", [
           PageHeader(header),
@@ -28,10 +28,10 @@ class Process extends StatelessComponent {
         section(classes: "col-start px-main g-section", [
           SectionTitle(sectionTitle1),
           div(
-            classes: "grid grid-cols-1 gap-20 t-xl:gap-30 t-xl:grid-cols-2",
+            classes: "grid grid-cols-1 gap-10-30 t-xl:grid-cols-2",
             [
               for (var i = 0; i < details.length; i++)
-                div(classes: "flex flex-col self-stretch -space-y-48 t-xl:-space-68 d:-space-y-90", [
+                div(classes: "col-start -space-y-48 t-xl:-space-68 d:-space-y-90", [
                   h1(
                     classes: "text-start text-dark-green-40 text-[80px] t-xl:text-[100px] d:text-[150px] leading-[150%]",
                     [text("${(i + 1) < 10 ? "0${i + 1}" : i + 1}")],

@@ -8,6 +8,4 @@ class ComponentStyles {
   final String cta = 'col-center mx-main l:flex-row relative overflow-clip p-40 t-xl:p-60 d:p-80 gap-20 l:gap-150 round-10 box-light-1';
 
   final String panelButton = "font-icon cursor-pointer leading-none p-10 d:p-12 d:rounded-lg rounded-md box-light-3 text-gray-20 text-[28px] hover:bg-green-85";
-
-  final String card1 = 'col-center box-light-1 rounded-xl grow gap-4-20 p-24 t:p-30 l:px-50 l:py-40';
 }

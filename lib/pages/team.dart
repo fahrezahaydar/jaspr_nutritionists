@@ -29,32 +29,23 @@ class Team extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield Page(
       id: "team",
-      classes: "page col-start py-main",
+      classes: "page-2 col-start py-main",
       [
         section(classes: "col-start px-main", [
           PageHeader(header),
-          TabMenu(
-            data: teamList,
-            provider: teamProvider,
-          ),
-        ]),
-        section(
-          classes: "px-main gap-10-30",
-          [
+          div(classes: "col-start gap-10-30", [
+            TabMenu(
+              data: teamList,
+              provider: teamProvider,
+            ),
             Builder(builder: (context) sync* {
               var index = context.watch(teamProvider);
-              yield div(
-                classes: "grid grid-cols-1 t:grid-cols-2 l:grid-cols-3 d:grid-cols-4 gap-10-20 self-stretch",
-                [
-                  for (var i = 0; i < teams[index].members.length; i++)
-                    TeamCard(
-                      teams[index].members[i],
-                    ),
-                ],
-              );
+              yield div(classes: "grid grid-cols-1 t:grid-cols-2 t-xl:grid-cols-3 l:grid-cols-4 gap2-10-20 self-stretch", [
+                for (var i = 0; i < teams[index].members.length; i++) TeamCard(teams[index].members[i]),
+              ]);
             })
-          ],
-        ),
+          ]),
+        ]),
         CTA(
           team,
           buttonText: "Apply Now",

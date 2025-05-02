@@ -21,7 +21,7 @@ class NavigationPanel extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: "row-center justify-center gap-10-20 $classes", [
+    yield div(classes: "row-center justify-center gap2-10-20 $classes", [
       button(
         classes: st.panelButton,
         onClick: leftClick,
